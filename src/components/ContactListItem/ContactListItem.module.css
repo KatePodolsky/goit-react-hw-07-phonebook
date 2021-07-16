@@ -1,0 +1,21 @@
+.button {
+  width: 150px;
+  margin-left: 20px;
+  color: rgba(11, 144, 108);
+  border-radius: 10px;
+  background-color: rgba(11, 144, 109, 0.143);
+  border: solid 2px rgb(11, 144, 108);
+  outline: rgb(11, 144, 108);
+}
+
+.button:focus,
+.button:hover {
+  box-shadow: 3px 3px 14px 12px rgb(11, 144, 108, 0.5);
+  color: beige;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}

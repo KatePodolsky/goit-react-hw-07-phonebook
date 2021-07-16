@@ -1,0 +1,25 @@
+.filterName {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  padding: 5px 50px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+  font-size: 18px;
+  color: rgba(11, 144, 108);
+}
+
+.input {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  cursor: pointer;
+  height: 35px;
+  width: 350px;
+  border-radius: 10px;
+  border: solid 2px rgb(11, 144, 108);
+  outline: rgb(11, 144, 108);
+}
