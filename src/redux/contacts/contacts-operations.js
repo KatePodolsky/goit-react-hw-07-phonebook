@@ -1,5 +1,8 @@
 import axios from 'axios';
 import {
+    fetchContactRequest,
+    fetchContactSuccess,
+    fetchContactError,
     saveContactRequest,
     saveContactSuccess,
     saveContactError,
@@ -9,6 +12,15 @@ import {
 } from './contacts-actions';
 
 axios.defaults.baseURL = 'http://localhost:4040/';
+
+const fetchContacts = () => dispatch => {
+    dispatch(fetchContactRequest());
+
+    axios
+        .get('/contacts')
+        .then(({ data }) => dispatch(fetchContactSuccess(data)))
+        .catch(error=>dispatch(fetchContactError(error)))
+}
 
 const saveContact = ({ name, number }) => dispatch => {
     const contact = { name, number };
@@ -34,5 +46,5 @@ const deleteContact = id => dispatch => {
             dispatch(deleteContactError(error)))
 
 }
-
-export default { saveContact, deleteContact }
+// eslint-disable-next-line
+export default { fetchContacts, saveContact, deleteContact }

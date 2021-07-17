@@ -1,74 +1,29 @@
 {
   "contacts": [
     {
-      "name": "sdfg",
-      "number": "556-56-56",
-      "id": 1
+      "name": "Micky Mouse",
+      "number": "722-22-22",
+      "id": 17
     },
     {
-      "name": "sdfg",
-      "number": "556-56-56",
-      "id": 2
+      "name": "Minnie Mouse",
+      "number": "711-11-11",
+      "id": 18
     },
     {
-      "name": "sdfg",
-      "number": "556-56-56",
-      "id": 3
+      "name": "Pluto",
+      "number": "733-33-33",
+      "id": 19
     },
     {
-      "name": "sdfgh",
-      "number": "556-56-56",
-      "id": 4
+      "name": "Donald Duck",
+      "number": "744-44-44",
+      "id": 20
     },
     {
-      "name": "sdfg",
-      "number": "556-56-56",
-      "id": 5
-    },
-    {
-      "name": "sdfg",
-      "number": "556-56-56",
-      "id": 6
-    },
-    {
-      "name": "sdfg",
-      "number": "556-56-56",
-      "id": 7
-    },
-    {
-      "name": "sdfg",
-      "number": "556-56-56",
-      "id": 8
-    },
-    {
-      "name": "sdfg",
-      "number": "556-56-56",
-      "id": 9
-    },
-    {
-      "name": "sdfgh",
-      "number": "454-45-45",
-      "id": 10
-    },
-    {
-      "name": "sdfg",
-      "number": "556-56-56",
-      "id": 11
-    },
-    {
-      "name": "dfg",
-      "number": "454-45-45",
-      "id": 12
-    },
-    {
-      "name": "Екатерина",
-      "number": "556-56-53",
-      "id": 13
-    },
-    {
-      "name": "Kate",
-      "number": "345-34-45",
-      "id": 16
+      "name": "Goofy",
+      "number": "755-55-55",
+      "id": 21
     }
   ]
 }

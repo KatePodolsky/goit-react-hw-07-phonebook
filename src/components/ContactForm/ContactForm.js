@@ -2,9 +2,11 @@ import React, { Component } from "react";
 import { connect } from 'react-redux';
 import shortid from 'shortid';
 import PropTypes from "prop-types";
-import contactsOperations from '../../redux/contacts/contacts-operations';
+
+import {contactsSelectors, contactsOperations} from '../../redux/contacts';
 
 import styles from "./ContactForm.module.css"
+
 
 class ContactForm extends Component {
     static defaultProps = {
@@ -30,9 +32,23 @@ class ContactForm extends Component {
         this.setState({ [name]: value });
     }
 
+    checkingAnExistingContact = (state, contacts) => {
+        const { name, number } = state;
+        if (contacts.some(contact => contact.name.toLowerCase() === name.toLowerCase())) {
+            alert(`${name} is already in contacts`)
+            return;
+    }
+
+        if (contacts.some(contact => contact.number === number)) {
+            alert(`${number} is already in contacts under a different name`)
+            return;
+        }
+        this.props.onSubmit(state);
+    }
+
     handlesubmit = e => {
         e.preventDefault();
-        this.props.onSubmit(this.state);
+        this.checkingAnExistingContact(this.state, this.props.contacts);
         this.reset()
     }
     reset = () => {
@@ -80,8 +96,12 @@ class ContactForm extends Component {
     }
 }
 
+const mapStateToProps = state => ({
+    contacts: contactsSelectors.getAllContacts(state),
+})
+
 const mapDispatchToProps = dispatch => ({
-    onSubmit: (name, number) => dispatch(contactsOperations.saveContact(name, number)),
+    onSubmit: (name, number) => dispatch(contactsOperations.saveContact(name, number))
 });
 
-export default connect(null, mapDispatchToProps)(ContactForm);
+export default connect(mapStateToProps, mapDispatchToProps)(ContactForm);

@@ -1,9 +1,13 @@
 import React from "react";
 import { connect } from 'react-redux';
-import contactsOperations from '../../redux/contacts/contacts-operations';
 import PropTypes from 'prop-types';
+
+import ContactListItem from "../ContactListItem"
+
+import { contactsOperations, contactsSelectors } from '../../redux/contacts';
+
 import styles from "./ContactList.module.css";
-import ContactListItem from "../ContactListItem/ContactListItem"
+
 
 const ContactList = ({ contacts, onDeleteContact }) => (
     <ul className={styles.contactList}>
@@ -19,19 +23,11 @@ ContactList.propTypes = {
         name: PropTypes.string.isRequired,
         number: PropTypes.string.isRequired,
     })).isRequired,
-}
-
-const getfilteredContacts = (allcontacts, filter) => {
-    const normalizedFilter = filter.toLowerCase();
-
-    return allcontacts.filter(contact =>
-        contact.name.toLowerCase().includes(normalizedFilter));
 };
 
 const mapStateToProps = state => ({
-    contacts: getfilteredContacts(state.contacts.items, state.contacts.filter),
+    contacts: contactsSelectors.getfilteredContacts(state),
 })
-
 
 const mapDispatchToProps = dispatch => (
     {
